@@ -1,0 +1,5 @@
+{
+    "scss.lint.propertyIgnoredDueToDisplay": "ignore",
+    "css.lint.propertyIgnoredDueToDisplay": "ignore",
+    "prettier.eslintIntegration": true
+}
