@@ -71906,7 +71906,11 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleLinkShow", function (id) {
-      _this.props.history.push("".concat(_this.props.match.url, "/").concat(id));
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("".concat(_this.props.match.url, "/").concat(id), {
+        view_count: _this.state.posts[id - 1].view_count + 1
+      }).catch(function (error) {
+        return console.log(error);
+      }).then(_this._getPosts()).then(_this.props.history.push("".concat(_this.props.match.url, "/").concat(id)));
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleSelectButton", function () {
@@ -71943,7 +71947,7 @@ function (_Component) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/posts").then(function (response) {
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/posts').then(function (response) {
                   return _this2.setState({
                     posts: _toConsumableArray(response.data.posts),
                     loading: false
@@ -71980,7 +71984,7 @@ function (_Component) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/myPosts").then(function (response) {
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/myPosts').then(function (response) {
                   return _this3.setState({
                     myPosts: _toConsumableArray(response.data.myposts)
                   });
@@ -72013,7 +72017,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log(this.state);
+      console.log(this.state.posts);
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, this.state.loading ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Loader__WEBPACK_IMPORTED_MODULE_7__["default"], null) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Style_Container__WEBPACK_IMPORTED_MODULE_6__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Post_SelectButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
         handleSelectButton: this.handleSelectButton,
         select: this.state.select
@@ -72579,7 +72583,7 @@ function (_Component) {
       }
 
       return handleCommentSubmit;
-    }() //게시물관련
+    }() // 게시물관련
 
   }, {
     key: "_getPost",
@@ -72837,8 +72841,7 @@ function (_Component) {
     value: function render() {
       var _this$state = this.state,
           prices = _this$state.prices,
-          form = _this$state.form,
-          checkbox = _this$state.checkbox;
+          form = _this$state.form;
       var handleChange = this.handleChange,
           handleSubmit = this.handleSubmit,
           toggleCheckbox = this.toggleCheckbox;
@@ -73206,9 +73209,9 @@ var HeaderLink = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderLink, {
     to: "/contacts"
   }, "\uC624\uC2DC\uB294\uAE38")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    current: pathname === '/reviews'
+    current: pathname === '/posts'
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderLink, {
-    to: "/reviews"
+    to: "/posts"
   }, "\uCDE8\uC5C5\uD6C4\uAE30")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
     current: pathname === '/calls'
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderLink, {
@@ -73787,7 +73790,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var RenderPost = function RenderPost(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.post.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.post.user && props.post.user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.post.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.post.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.post.created_at === props.post.updated_at ? '작성일 : ' + props.post.created_at : '작성일 : ' + props.post.created_at + '수정일 : ' + props.post.updated_at), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "id : ", props.post.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "name : ", props.post.user && props.post.user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "title : ", props.post.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "description : ", props.post.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "view_count : ", props.post.view_count + 1), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.post.created_at === props.post.updated_at ? "\uC791\uC131\uC77C : ".concat(props.post.created_at) : "\uC791\uC131\uC77C : ".concat(props.post.created_at, "\uC218\uC815\uC77C : ").concat(props.post.updated_at)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: function onClick() {
       return props.handleBack();
     }
@@ -73820,7 +73823,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n    display: inline-block;\n    animation: ", " 2s linear infinite;\n    padding: 2rem 1rem;\n    font-size: 1.2rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: inline-block;\n  animation: ", " 2s linear infinite;\n  padding: 2rem 1rem;\n  font-size: 1.2rem;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -73840,7 +73843,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    padding: 0.8rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  padding: 0.8rem;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -73860,7 +73863,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    box-shadow: var(--box-shadow);\n    position: relative;\n    padding: 2rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n  box-shadow: var(--box-shadow);\n  position: relative;\n  padding: 2rem;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -73870,7 +73873,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    grid-auto-rows: 330px;\n    grid-gap: 100px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-auto-rows: 330px;\n  grid-gap: 100px;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -73904,7 +73907,7 @@ var RenderPosts = function RenderPosts(props) {
       onClick: function onClick() {
         return props.handleLinkShow(post.id);
       }
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, null, post.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, post.user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, post.description), post.create_at === post.updated_at ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Date, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, post.created_at)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Date, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, post.updated_at)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Scale, null, "\uC810\uC810\uD655\uB300"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, post.post_comments.length > 0 ? '댓글 수 :' + post.post_comments.length : ''));
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, null, post.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, post.user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, post.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "\uC870\uD68C\uC218 : ", post.view_count), post.create_at === post.updated_at ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Date, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, post.created_at)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Date, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, post.updated_at)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Scale, null, "\uC810\uC810\uD655\uB300"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, post.post_comments.length > 0 ? "\uB313\uAE00 \uC218 :".concat(post.post_comments.length) : ''));
   })));
 };
 

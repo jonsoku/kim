@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Price;
 use Illuminate\Http\Request;
 use App\Http\Requests\PriceRequest;
+use Illuminate\Support\Facades\Auth;
 
 class PriceController extends Controller
 {
@@ -16,9 +17,8 @@ class PriceController extends Controller
     public function index()
     {
         $prices = $this->price->getPrices();
-
         return response()->json([
-            'prices' => $prices
+            'prices' => $prices,
         ]);
     }
 

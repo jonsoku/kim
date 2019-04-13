@@ -7,78 +7,80 @@ import Container from '../../components/Style/Container';
 import Loader from '../../components/Loader';
 
 export default class Post extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            posts: [],
-            myPosts: [],
-            select: false,
-            loading: true
-        };
-    }
-
-    handleLinkCreate = () => {
-        this.props.history.push(`${this.props.match.url}/create`);
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: [],
+      myPosts: [],
+      select: false,
+      loading: true,
     };
+  }
 
-    handleLinkShow = id => {
-        this.props.history.push(`${this.props.match.url}/${id}`);
-    };
+  handleLinkCreate = () => {
+    this.props.history.push(`${this.props.match.url}/create`);
+  };
 
-    handleSelectButton = () => {
-        if (this.state.select === true) {
-            this.setState({
-                select: false
-            });
-        } else {
-            this.setState({
-                select: true
-            });
-        }
-    };
+  handleLinkShow = (id) => {
+    Axios.put(`${this.props.match.url}/${id}`, {
+      view_count: this.state.posts[id - 1].view_count + 1,
+    })
+      .catch(error => console.log(error))
+      .then(this._getPosts())
+      .then(this.props.history.push(`${this.props.match.url}/${id}`));
+  };
 
-    async _getPosts() {
-        return await Axios.get(`/posts`).then(response =>
-            this.setState({
-                posts: [...response.data.posts],
-                loading: false
-            })
-        );
+  handleSelectButton = () => {
+    if (this.state.select === true) {
+      this.setState({
+        select: false,
+      });
+    } else {
+      this.setState({
+        select: true,
+      });
     }
-    async _getMyPosts() {
-        return await Axios.get(`/myPosts`).then(response =>
-            this.setState({
-                myPosts: [...response.data.myposts]
-            })
-        );
-    }
+  };
 
-    componentDidMount() {
-        this._getPosts();
-        this._getMyPosts();
-    }
+  async _getPosts() {
+    return await Axios.get('/posts').then(response => this.setState({
+      posts: [...response.data.posts],
+      loading: false,
+    }));
+  }
 
-    render() {
-        console.log(this.state);
-        return (
-            <>
-                {this.state.loading ? (
-                    <Loader />
-                ) : (
-                    <Container>
-                        <SelectButton handleSelectButton={this.handleSelectButton} select={this.state.select} />
-                        {this.state.select ? (
-                            <RenderMyPosts myPosts={this.state.myPosts} />
-                        ) : (
-                            <RenderPosts
-                                posts={this.state.posts}
-                                handleLinkShow={this.handleLinkShow}
-                                handleLinkCreate={this.handleLinkCreate}
-                            />
-                        )}
-                    </Container>
-                )}
-            </>
-        );
-    }
+  async _getMyPosts() {
+    return await Axios.get('/myPosts').then(response => this.setState({
+      myPosts: [...response.data.myposts],
+    }));
+  }
+
+  componentDidMount() {
+    this._getPosts();
+    this._getMyPosts();
+  }
+
+  render() {
+    console.log(this.state.posts);
+    return (
+      <React.Fragment>
+        {this.state.loading ? (
+          <Loader />
+        ) : (
+          <Container>
+            <SelectButton handleSelectButton={this.handleSelectButton} select={this.state.select} />
+            {this.state.select ? (
+              <RenderMyPosts myPosts={this.state.myPosts} />
+            ) : (
+              <RenderPosts
+                posts={this.state.posts}
+                handleLinkShow={this.handleLinkShow}
+                handleLinkCreate={this.handleLinkCreate}
+              />
+            )}
+          </Container>
+        )}
+      </React.Fragment>
+    );
+  }
 }

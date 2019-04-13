@@ -69,7 +69,7 @@ export default class Price extends Component {
   }
 
   render() {
-    const { prices, form, checkbox } = this.state;
+    const { prices, form } = this.state;
     const { handleChange, handleSubmit, toggleCheckbox } = this;
     return (
       <Container>
