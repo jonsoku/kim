@@ -1,9 +1,9 @@
 import React from 'react';
 
-const RenderYoutubes = ({ youtubes }) => (
+const RenderYoutubes = ({ youtubes, handleLink }) => (
   <div>
     {youtubes.map(youtube => (
-      <div key={youtube.id}>
+      <div key={youtube.id} onClick={() => handleLink(youtube.id)}>
         <p>ID : {youtube.id}</p>
         <p>글쓴이 : {youtube.user.name}</p>
         <p>카테고리 : {youtube.category}</p>

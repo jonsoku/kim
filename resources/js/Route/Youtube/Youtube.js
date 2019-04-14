@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-import Container from '../../components/Style/Container';
 import RenderYoutubes from '../../components/Youtube/RenderYoutubes';
+import Container from '../../components/Style/Container';
 
 export default class Youtube extends Component {
   constructor(props) {
@@ -11,23 +11,28 @@ export default class Youtube extends Component {
     };
   }
 
-  _getYoutube() {
-    Axios.get('/youtubes')
-      .then(response => this.setState({
-        youtubes: [...response.data.youtubes],
-      }))
-      .catch(error => console.log(error));
-  }
+  handleLink = (id) => {
+    this.props.history.push(`${this.props.match.url}/${id}`);
+  };
+
+  _getAll = async () => await Axios.get('/youtubes').then(response => this.setState({
+    youtubes: [...response.data.youtubes],
+  }));
 
   componentDidMount() {
-    this._getYoutube();
+    this._getAll();
+  }
+
+  componentWillUnmount() {
+    this._getAll();
   }
 
   render() {
     const { youtubes } = this.state;
+    const { handleLink } = this;
     return (
       <Container>
-        <RenderYoutubes youtubes={youtubes} />
+        <RenderYoutubes youtubes={youtubes} handleLink={handleLink} />
       </Container>
     );
   }

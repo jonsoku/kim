@@ -11,6 +11,7 @@ import PostCreate from '../Route/Post/PostCreate';
 import Introduce from '../Route/Introduce';
 import Price from '../Route/Price';
 import Youtube from '../Route/Youtube';
+import YoutubeShow from '../Route/Youtube/YoutubeShow';
 import Review from '../Route/Review';
 import Call from '../Route/Call';
 
@@ -26,6 +27,7 @@ export default () => (
       <Route path="/introduces" exact component={Introduce} />
       <Route path="/prices" exact component={Price} />
       <Route path="/youtubes" exact component={Youtube} />
+      <Route path="/youtubes/:id" exact component={YoutubeShow} />
       <Route path="/reviews" exact component={Review} />
       <Route path="/calls" exact component={Call} />
       <Redirect from="*" to="/" />

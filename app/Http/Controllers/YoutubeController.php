@@ -56,7 +56,11 @@ class YoutubeController extends Controller
      */
     public function show(Youtube $youtube)
     {
-        //
+        $youtube->user;
+        $youtube->increment('view_count');
+        return response()->json([
+            'youtube' => $youtube
+        ]);
     }
 
     /**
