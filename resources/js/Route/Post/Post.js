@@ -22,12 +22,7 @@ export default class Post extends Component {
   };
 
   handleLinkShow = (id) => {
-    Axios.put(`${this.props.match.url}/${id}`, {
-      view_count: this.state.posts[id - 1].view_count + 1,
-    })
-      .catch(error => console.log(error))
-      .then(this._getPosts())
-      .then(this.props.history.push(`${this.props.match.url}/${id}`));
+    this.props.history.push(`${this.props.match.url}/${id}`);
   };
 
   handleSelectButton = () => {

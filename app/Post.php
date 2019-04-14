@@ -9,10 +9,16 @@ class Post extends Model
 {
     protected $guarded = [];
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
-    public function postComments(){
+    public function postComments()
+    {
         return $this->hasMany(PostComment::class);
+    }
+    public function viewCounter($post)
+    {
+        $post->increment('view_count');
     }
 }

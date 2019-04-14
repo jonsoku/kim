@@ -71832,11 +71832,7 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleLinkShow", function (id) {
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("".concat(_this.props.match.url, "/").concat(id), {
-        view_count: _this.state.posts[id - 1].view_count + 1
-      }).catch(function (error) {
-        return console.log(error);
-      }).then(_this._getPosts()).then(_this.props.history.push("".concat(_this.props.match.url, "/").concat(id)));
+      _this.props.history.push("".concat(_this.props.match.url, "/").concat(id));
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleSelectButton", function () {

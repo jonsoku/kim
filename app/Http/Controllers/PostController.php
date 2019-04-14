@@ -10,6 +10,12 @@ use App\PostComment;
 
 class PostController extends Controller
 {
+
+    public function __construct(Post $post)
+    {
+        $this->post = $post;
+    }
+
     public function index()
     {
         $posts = \App\Post::with('user')->with('postComments')->latest()->get();
@@ -41,6 +47,7 @@ class PostController extends Controller
     {
         $post->user;
         $postComments = $post->postComments()->with('user')->latest()->get();
+        $post->increment('view_count');
         return response()->json([
             'post' => $post,
             'postComments' => $postComments

@@ -26,7 +26,7 @@ class PriceController extends Controller
     {
         //
     }
-    
+
     public function store(PriceRequest $request)
     {
         $user = $request->user();
