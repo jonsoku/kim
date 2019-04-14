@@ -51,8 +51,8 @@ export default withRouter(({ location: { pathname } }) => (
           <Li current={pathname === '/prices'}>
             <HeaderLink to="/prices">수강료</HeaderLink>
           </Li>
-          <Li current={pathname === '/contacts'}>
-            <HeaderLink to="/contacts">오시는길</HeaderLink>
+          <Li current={pathname === '/youtubes'}>
+            <HeaderLink to="/youtubes">강의영상</HeaderLink>
           </Li>
           <Li current={pathname === '/posts'}>
             <HeaderLink to="/posts">취업후기</HeaderLink>

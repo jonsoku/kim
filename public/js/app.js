@@ -68754,7 +68754,7 @@ function isStyledComponent(target) {
 
 // 
 
-var SC_ATTR = typeof process !== 'undefined' && Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","NODE_ENV":"development"}).SC_ATTR || 'data-styled';
+var SC_ATTR = typeof process !== 'undefined' && Object({"MIX_PUSHER_APP_CLUSTER":"mt1","MIX_PUSHER_APP_KEY":"","NODE_ENV":"development"}).SC_ATTR || 'data-styled';
 
 var SC_VERSION_ATTR = 'data-styled-version';
 
@@ -71540,80 +71540,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/Route/Contact/Contact.js":
-/*!***********************************************!*\
-  !*** ./resources/js/Route/Contact/Contact.js ***!
-  \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Contact; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Style_Container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Style/Container */ "./resources/js/components/Style/Container.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var Contact =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Contact, _Component);
-
-  function Contact() {
-    _classCallCheck(this, Contact);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Contact).apply(this, arguments));
-  }
-
-  _createClass(Contact, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Style_Container__WEBPACK_IMPORTED_MODULE_1__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "contact"));
-    }
-  }]);
-
-  return Contact;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-
-
-/***/ }),
-
-/***/ "./resources/js/Route/Contact/index.js":
-/*!*********************************************!*\
-  !*** ./resources/js/Route/Contact/index.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Contact */ "./resources/js/Route/Contact/Contact.js");
-
-/* harmony default export */ __webpack_exports__["default"] = (_Contact__WEBPACK_IMPORTED_MODULE_0__["default"]);
-
-/***/ }),
-
 /***/ "./resources/js/Route/Home/Home.js":
 /*!*****************************************!*\
   !*** ./resources/js/Route/Home/Home.js ***!
@@ -72952,6 +72878,120 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Route/Youtube/Youtube.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Route/Youtube/Youtube.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Youtube; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_Style_Container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Style/Container */ "./resources/js/components/Style/Container.js");
+/* harmony import */ var _components_Youtube_RenderYoutubes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Youtube/RenderYoutubes */ "./resources/js/components/Youtube/RenderYoutubes.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var Youtube =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Youtube, _Component);
+
+  function Youtube(props) {
+    var _this;
+
+    _classCallCheck(this, Youtube);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Youtube).call(this, props));
+    _this.state = {
+      youtubes: []
+    };
+    return _this;
+  }
+
+  _createClass(Youtube, [{
+    key: "_getYoutube",
+    value: function _getYoutube() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/youtubes').then(function (response) {
+        return _this2.setState({
+          youtubes: _toConsumableArray(response.data.youtubes)
+        });
+      }).catch(function (error) {
+        return console.log(error);
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this._getYoutube();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var youtubes = this.state.youtubes;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Style_Container__WEBPACK_IMPORTED_MODULE_2__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Youtube_RenderYoutubes__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        youtubes: youtubes
+      }));
+    }
+  }]);
+
+  return Youtube;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Route/Youtube/index.js":
+/*!*********************************************!*\
+  !*** ./resources/js/Route/Youtube/index.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Youtube__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Youtube */ "./resources/js/Route/Youtube/Youtube.js");
+
+/* harmony default export */ __webpack_exports__["default"] = (_Youtube__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -73205,10 +73245,10 @@ var HeaderLink = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderLink, {
     to: "/prices"
   }, "\uC218\uAC15\uB8CC")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
-    current: pathname === '/contacts'
+    current: pathname === '/youtubes'
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderLink, {
-    to: "/contacts"
-  }, "\uC624\uC2DC\uB294\uAE38")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
+    to: "/youtubes"
+  }, "\uAC15\uC758\uC601\uC0C1")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Li, {
     current: pathname === '/posts'
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderLink, {
     to: "/posts"
@@ -74318,7 +74358,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Route_Post_PostCreate__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Route/Post/PostCreate */ "./resources/js/Route/Post/PostCreate.js");
 /* harmony import */ var _Route_Introduce__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Route/Introduce */ "./resources/js/Route/Introduce/index.js");
 /* harmony import */ var _Route_Price__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Route/Price */ "./resources/js/Route/Price/index.js");
-/* harmony import */ var _Route_Contact__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Route/Contact */ "./resources/js/Route/Contact/index.js");
+/* harmony import */ var _Route_Youtube__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Route/Youtube */ "./resources/js/Route/Youtube/index.js");
 /* harmony import */ var _Route_Review__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Route/Review */ "./resources/js/Route/Review/index.js");
 /* harmony import */ var _Route_Call__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Route/Call */ "./resources/js/Route/Call/index.js");
 
@@ -74364,9 +74404,9 @@ __webpack_require__.r(__webpack_exports__);
     exact: true,
     component: _Route_Price__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/contacts",
+    path: "/youtubes",
     exact: true,
-    component: _Route_Contact__WEBPACK_IMPORTED_MODULE_10__["default"]
+    component: _Route_Youtube__WEBPACK_IMPORTED_MODULE_10__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/reviews",
     exact: true,
@@ -74445,6 +74485,32 @@ var globalStyles = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["create
 
 /***/ }),
 
+/***/ "./resources/js/components/Youtube/RenderYoutubes.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/Youtube/RenderYoutubes.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var RenderYoutubes = function RenderYoutubes(_ref) {
+  var youtubes = _ref.youtubes;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, youtubes.map(function (youtube) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: youtube.id
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "ID : ", youtube.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\uAE00\uC4F4\uC774 : ", youtube.user.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\uCE74\uD14C\uACE0\uB9AC : ", youtube.category), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\uD0C0\uC774\uD2C0 : ", youtube.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\uC8FC\uC18C : ", youtube.url), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\uBCF8\uBB38 : ", youtube.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\uC870\uD68C\uC218 : ", youtube.view_count));
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (RenderYoutubes);
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -74463,8 +74529,8 @@ var globalStyles = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["create
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jongseoklee/Documents/projects/SAMPLE2/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/jongseoklee/Documents/projects/SAMPLE2/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\LEEJONGSEOK\Documents\kim\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\LEEJONGSEOK\Documents\kim\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

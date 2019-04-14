@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Post;
 use App\PostComment;
 use App\Price;
+use App\Youtube;
 
 
 class User extends Authenticatable
@@ -43,22 +44,31 @@ class User extends Authenticatable
     ];
 
 
-    public function posts(){
+    public function posts()
+    {
         return $this->hasMany(Post::class);
     }
-    public function postComments(){
+    public function postComments()
+    {
         return $this->hasMany(PostComment::class);
     }
 
 
-    public function prices(){
+    public function prices()
+    {
         return $this->hasMany(Price::class);
+    }
+
+    public function youtubes()
+    {
+        return $this->hasMany(Youtube::class);
     }
 
 
 
     //helper
-    public function isAdmin(){
+    public function isAdmin()
+    {
         return $this->id === 1;
     }
 }

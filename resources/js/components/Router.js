@@ -10,7 +10,7 @@ import PostEdit from '../Route/Post/PostEdit';
 import PostCreate from '../Route/Post/PostCreate';
 import Introduce from '../Route/Introduce';
 import Price from '../Route/Price';
-import Contact from '../Route/Contact';
+import Youtube from '../Route/Youtube';
 import Review from '../Route/Review';
 import Call from '../Route/Call';
 
@@ -25,7 +25,7 @@ export default () => (
       <Route path="/posts/:id/edit" exact component={PostEdit} />
       <Route path="/introduces" exact component={Introduce} />
       <Route path="/prices" exact component={Price} />
-      <Route path="/contacts" exact component={Contact} />
+      <Route path="/youtubes" exact component={Youtube} />
       <Route path="/reviews" exact component={Review} />
       <Route path="/calls" exact component={Call} />
       <Redirect from="*" to="/" />
