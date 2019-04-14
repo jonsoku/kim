@@ -4,15 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Youtube;
 use Illuminate\Http\Request;
+use App\Http\Requests\YoutubeRequest;
 
 class YoutubeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
     public function __construct(Youtube $youtube)
     {
         $this->youtube = $youtube;
@@ -27,25 +22,9 @@ class YoutubeController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function store(YoutubeRequest $request)
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        $this->youtube->saveAll($request);
     }
 
     /**
@@ -94,6 +73,6 @@ class YoutubeController extends Controller
      */
     public function destroy(Youtube $youtube)
     {
-        //
+        $youtube->delete();
     }
 }

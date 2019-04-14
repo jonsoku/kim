@@ -11,6 +11,10 @@ export default class Youtube extends Component {
     };
   }
 
+  handleCreate = () => {
+    this.props.history.push(`${this.props.match.url}/create`);
+  };
+
   handleLink = (id) => {
     this.props.history.push(`${this.props.match.url}/${id}`);
   };
@@ -23,16 +27,12 @@ export default class Youtube extends Component {
     this._getAll();
   }
 
-  componentWillUnmount() {
-    this._getAll();
-  }
-
   render() {
     const { youtubes } = this.state;
-    const { handleLink } = this;
+    const { handleLink, handleCreate } = this;
     return (
       <Container>
-        <RenderYoutubes youtubes={youtubes} handleLink={handleLink} />
+        <RenderYoutubes youtubes={youtubes} handleLink={handleLink} handleCreate={handleCreate} />
       </Container>
     );
   }
