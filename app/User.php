@@ -10,6 +10,8 @@ use App\Post;
 use App\PostComment;
 use App\Price;
 use App\Youtube;
+use App\Board;
+use App\BoardLike;
 
 
 class User extends Authenticatable
@@ -64,7 +66,13 @@ class User extends Authenticatable
         return $this->hasMany(Youtube::class);
     }
 
+    public function boards(){
+        return $this->hasMany(Board::class);
+    }
 
+    public function boardLikes(){
+        return $this->hasMany(BoardLike::class);
+    }
 
     //helper
     public function isAdmin()

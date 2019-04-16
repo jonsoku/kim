@@ -26,7 +26,7 @@ const Ul = styled.ul`
 `;
 const Li = styled.li`
   float: left;
-  width: 16.6666666667%;
+  width: 14.2857142857%;
   text-align: center;
   transition: all 0.5s;
   font-weight: ${props => (props.current ? '900 ' : 'transparent')};
@@ -50,6 +50,9 @@ export default withRouter(({ location: { pathname } }) => (
           </Li>
           <Li current={pathname === '/prices'}>
             <HeaderLink to="/prices">수강료</HeaderLink>
+          </Li>
+          <Li current={pathname === '/boards'}>
+            <HeaderLink to="/boards">게시판</HeaderLink>
           </Li>
           <Li current={pathname === '/youtubes'}>
             <HeaderLink to="/youtubes">강의영상</HeaderLink>

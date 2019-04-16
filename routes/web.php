@@ -7,4 +7,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/myPosts', 'PostController@myIndex');
     Route::resource('prices', 'PriceController');
     Route::resource('youtubes', 'YoutubeController');
+    Route::resource('boards', 'BoardController');
 });
